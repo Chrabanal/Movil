@@ -1,148 +1,98 @@
-// Estilos generales
 ion-content {
-    --background: #ffffff; /* Fondo blanco */
-  }
-  
-  .welcome-message {
-    text-align: center; /* Centra el texto */
-    margin: 20px 0; /* Añade margen arriba y abajo */
-  }
-  
-  .welcome-message h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 36px; /* Tamaño de fuente grande */
-    color: #000000; /* Color negro */
-    font-weight: bold; /* Engrosa el texto */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Añade sombra al texto para hacerlo más llamativo */
-    margin: 0; /* Elimina el margen por defecto del h1 */
-  }
-  
-  // Botones
-  ion-button {
-    --background: #28a745; /* Verde del logo */
-    --color: white;
-    --border-radius: 12px; /* Bordes curvados en los botones */
-    font-weight: bold; /* Engrosa el texto del botón */
-    font-size: 16px; /* Ajusta el tamaño del texto si es necesario */
-    transition: background-color 0.3s ease;
-    padding: 12px 24px; /* Ajusta el tamaño del botón */
-  }
-  
-  ion-button:hover {
-    --background: #218838; /* Verde más oscuro al pasar el mouse */
-  }
-  
-  // Imagen del logo
-  .logo-img {
-    display: block;
-    margin: 20px auto;
-    width: 150px;
-    height: auto;
-    animation: pulse-animation 2s infinite; /* Aplica la animación */
-  }
-  
-  @keyframes pulse-animation {
-    0% {
-      transform: scale(1); /* Tamaño normal */
-    }
-    50% {
-      transform: scale(1.1); /* Aumenta el tamaño */
-    }
-    100% {
-      transform: scale(1); /* Tamaño normal */
-    }
-  }
-  
-  // Estilos para el título
-  ion-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-    color: #28a745; /* Verde del logo */
-    text-align: center; /* Asegura que el texto esté centrado dentro del elemento */
-    font-weight: bold; /* Puedes hacer el texto más grueso si lo deseas */
-  }
-  
-  // Toolbar
-  ion-toolbar {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-  }
-  
-  // Contenedor del formulario
-  .form-container {
-    --background: #ffeb3b; /* Amarillo de fondo */
-    --border-radius: 16px; /* Bordes curvados del contenedor */
-    --padding: 20px; /* Relleno interno */
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-    margin: 20px;
-    border-radius: 16px; /* Curvatura de los bordes */
-  }
-  
-  ion-item {
-    --border-radius: 8px; /* Bordes curvados para los contenedores */
-    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional para los contenedores */
-    margin-bottom: 16px; /* Espacio inferior entre campos */
-  }
-  
-  ion-input {
-    --border-radius: 8px; /* Bordes curvados para los campos de entrada */
-    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional para los campos de entrada */
-  }
-  
-  // Media Queries para Responsividad
-  @media (max-width: 600px) {
-    ion-button {
-      font-size: 14px; /* Ajusta el tamaño del texto del botón en pantallas pequeñas */
-      padding: 10px; /* Ajusta el relleno del botón en pantallas pequeñas */
-    }
-  
-    .logo-img {
-      width: 100px; /* Reduce el tamaño del logo en pantallas pequeñas */
-    }
-  
-    ion-title {
-      font-size: 20px; /* Ajusta el tamaño del texto del título en pantallas pequeñas */
-    }
-  
-    .welcome-message h1 {
-      font-size: 28px; /* Reduce el tamaño del texto del mensaje en pantallas pequeñas */
-    }
-  }
-  
-  @media (min-width: 601px) and (max-width: 1024px) {
-    ion-button {
-      font-size: 16px; /* Ajusta el tamaño del texto del botón en tablets */
-    }
-  
-    .logo-img {
-      width: 120px; /* Ajusta el tamaño del logo en tablets */
-    }
-  
-    ion-title {
-      font-size: 22px; /* Ajusta el tamaño del texto del título en tablets */
-    }
-  
-    .welcome-message h1 {
-      font-size: 32px; /* Ajusta el tamaño del texto del mensaje en tablets */
-    }
-  }
-  
-  @media (min-width: 1025px) {
-    ion-button {
-      font-size: 18px; /* Ajusta el tamaño del texto del botón en pantallas grandes */
-    }
-  
-    .logo-img {
-      width: 150px; /* Ajusta el tamaño del logo en pantallas grandes */
-    }
-  
-    ion-title {
-      font-size: 24px; /* Ajusta el tamaño del texto del título en pantallas grandes */
-    }
-  
-    .welcome-message h1 {
-      font-size: 36px; /* Ajusta el tamaño del texto del mensaje en pantallas grandes */
-    }
-  }
-  
+  --background: linear-gradient(to bottom right, #ffffff, #f0f8ff, #e6f7ff, #ccf2ff); /* Degradado de luces suaves */
+  background-size: cover; /* Asegura que el fondo cubra todo el contenedor */
+  height: 100%; /* Asegura que el contenido ocupe todo el alto del contenedor */
+}
 
+.welcome-animation {
+  text-align: center; /* Centra el texto */
+  margin: 20px 0; /* Añade margen arriba y abajo */
+  animation: fadeInAnimation 3s ease-in-out;
+}
+
+.welcome-animation h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 48px; /* Tamaño de fuente grande */
+  color: #000000; /* Color negro */
+  font-weight: bold; /* Engrosa el texto */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Añade sombra al texto para hacerlo más llamativo */
+  margin: 0; /* Elimina el margen por defecto del h1 */
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(-20px); /* Comienza un poco más arriba */
+  }
+  100% {
+    opacity: 1; /* Alcanza la visibilidad completa */
+    transform: translateY(0); /* Vuelve a la posición original */
+  }
+}
+
+ion-button {
+  --background: #28a745; /* Verde del logo */
+  --color: white;
+  --border-radius: 12px; /* Bordes curvados en los botones */
+  font-weight: bold; /* Engrosa el texto del botón */
+  font-size: 16px; /* Ajusta el tamaño del texto si es necesario */
+  transition: background-color 0.3s ease;
+  padding: 12px 24px; /* Ajusta el tamaño del botón */
+}
+
+ion-button:hover {
+  --background: #218838; /* Verde más oscuro al pasar el mouse */
+}
+
+.logo-img {
+  display: block;
+  margin: 20px auto;
+  width: 150px;
+  height: auto;
+  animation: pulse-animation 2s infinite; /* Aplica la animación */
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1); /* Tamaño normal */
+  }
+  50% {
+    transform: scale(1.1); /* Aumenta el tamaño */
+  }
+  100% {
+    transform: scale(1); /* Tamaño normal */
+  }
+}
+
+ion-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  color: #28a745; /* Verde del logo */
+  text-align: center; /* Asegura que el texto esté centrado dentro del elemento */
+  font-weight: bold; /* Puedes hacer el texto más grueso si lo deseas */
+}
+
+ion-toolbar {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+.form-container {
+  --background: #ffeb3b; /* Amarillo de fondo */
+  --border-radius: 16px; /* Bordes curvados del contenedor */
+  --padding: 20px; /* Relleno interno */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+  margin: 20px;
+  border-radius: 16px; /* Curvatura de los bordes */
+}
+
+ion-item {
+  --border-radius: 8px; /* Bordes curvados para los contenedores */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional para los contenedores */
+  margin-bottom: 16px; /* Espacio inferior entre campos */
+}
+
+ion-input {
+  --border-radius: 8px; /* Bordes curvados para los campos de entrada */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional para los campos de entrada */
+}
