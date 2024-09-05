@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="DARK">
+    <ion-title>REGISTRATE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <img src="assets/img/Black___White_Letter_MD_Logo_Instagram_Post-removebg-preview (1).png" alt="Logo">
+    </ion-card-header>
+   </ion-card>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="email" [(ngModel)]="user.email" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password" required></ion-input>
+    
+      </ion-item>
+      
+
+      <ion-button class="ion-padding" color="primary" expand="full" (click)="register(user)">REGISTRARSE</ion-button>
+      <ion-button class="ion-padding" color="secondary" expand="full" routerLink="/login" >volver</ion-button>
+      
+    </ion-card-content>
+    
+
+</ion-content>

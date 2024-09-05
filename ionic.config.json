@@ -1,0 +1,7 @@
+{
+  "name": "checkmybag",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
