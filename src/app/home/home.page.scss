@@ -67,3 +67,43 @@ ion-footer {
   bottom: 0;
   width: 100%;
 }
+
+
+/* Estilos para el mensaje de bienvenida */
+.welcome-message {
+  position: absolute;
+  top: 0;
+  right: -100%; /* Comienza fuera de la pantalla a la derecha */
+  width: 100%;
+  background-color: #28a745; /* Color de fondo llamativo */
+  color: #000000; /* Color del texto */
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  animation: slideInPauseOut 6s ease-out forwards; /* Duración total extendida */
+}
+
+/* Animación de deslizamiento, pausa y desaparición */
+@keyframes slideInPauseOut {
+  0% {
+    transform: translateX(100%); /* Comienza fuera de la pantalla a la derecha */
+    opacity: 0;
+  }
+  5% {
+    transform: translateX(0); /* Mueve el texto a su posición final */
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(0); /* Mantiene el texto en su posición final */
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-100%); /* Mueve el texto fuera de la pantalla a la izquierda */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%); /* Mueve el texto fuera de la pantalla a la izquierda */
+    opacity: 0;
+  }
+}
