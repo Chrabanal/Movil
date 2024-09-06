@@ -1,53 +1,16 @@
-ion-content {
-  --background: linear-gradient(to bottom right, #ffffff, #f0f8ff, #e6f7ff, #ccf2ff); /* Degradado de luces suaves */
-  background-size: cover; /* Asegura que el fondo cubra todo el contenedor */
-  height: 100%; /* Asegura que el contenido ocupe todo el alto del contenedor */
+
+/* colores de fondo */
+ion-content { 
+  --background: linear-gradient(135deg, #1e3c72, #2a5298, #76c7c0, #ff9966, #ff5e62); /* rama de colores*/
+  background-size: 200% 200%; /* Aumenta el tamaño del fondo para dar más profundidad */
+  height: 100%; /* segura que abarque todo el contenedor */
 }
 
-.welcome-animation {
-  text-align: center; /* Centra el texto */
-  margin: 20px 0; /* Añade margen arriba y abajo */
-  animation: fadeInAnimation 3s ease-in-out;
-}
-
-.welcome-animation h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 48px; /* Tamaño de fuente grande */
-  color: #000000; /* Color negro */
-  font-weight: bold; /* Engrosa el texto */
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Añade sombra al texto para hacerlo más llamativo */
-  margin: 0; /* Elimina el margen por defecto del h1 */
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0; /* Comienza invisible */
-    transform: translateY(-20px); /* Comienza un poco más arriba */
-  }
-  100% {
-    opacity: 1; /* Alcanza la visibilidad completa */
-    transform: translateY(0); /* Vuelve a la posición original */
-  }
-}
-
-ion-button {
-  --background: #28a745; /* Verde del logo */
-  --color: white;
-  --border-radius: 12px; /* Bordes curvados en los botones */
-  font-weight: bold; /* Engrosa el texto del botón */
-  font-size: 16px; /* Ajusta el tamaño del texto si es necesario */
-  transition: background-color 0.3s ease;
-  padding: 12px 24px; /* Ajusta el tamaño del botón */
-}
-
-ion-button:hover {
-  --background: #218838; /* Verde más oscuro al pasar el mouse */
-}
-
+/* animacion logo palpitaciones de corazon*/
 .logo-img {
   display: block;
-  margin: 20px auto;
-  width: 150px;
+  margin: 40px auto;
+  width: 250px;
   height: auto;
   animation: pulse-animation 2s infinite; /* Aplica la animación */
 }
@@ -64,35 +27,58 @@ ion-button:hover {
   }
 }
 
-ion-title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-  color: #28a745; /* Verde del logo */
-  text-align: center; /* Asegura que el texto esté centrado dentro del elemento */
-  font-weight: bold; /* Puedes hacer el texto más grueso si lo deseas */
-}
 
-ion-toolbar {
-  display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-}
 
+/*container para transparencia */
 .form-container {
-  --background: #ffeb3b; /* Amarillo de fondo */
-  --border-radius: 16px; /* Bordes curvados del contenedor */
-  --padding: 20px; /* Relleno interno */
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-  margin: 20px;
+  --background: rgba(66, 66, 68, 0.8); /* nivel de transparencia(80% opaco) */
+  --border-radius: 16px; /* Bordes curvados */
+  margin: 10px; /* margen del container por los lados*/
   border-radius: 16px; /* Curvatura de los bordes */
 }
 
+
+/* dividir los los container de correo y contraseña separar y curvarlos*/
 ion-item {
   --border-radius: 8px; /* Bordes curvados para los contenedores */
-  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional para los contenedores */
-  margin-bottom: 16px; /* Espacio inferior entre campos */
+    margin-bottom: 16px; /* Espacio inferior entre campos */
 }
 
-ion-input {
-  --border-radius: 8px; /* Bordes curvados para los campos de entrada */
-  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional para los campos de entrada */
+
+/* Estilo del botón de inicio sesión */
+ion-button {
+  display: block;
+  width: 100%; /* el boton ocupe todo el hancho del contenedor*/
+  --background: #28a745; /* color boton */
+  --border-radius: 12px; /* Bordes curvados  boton */
+  font-weight: bold; /* Engrosa el texto del botón */
+  font-size: 16px; /* Ajusta el tamaño*/  
+}
+
+/* Estilo para el mensaje de registro  ( Aun no te has registrado) */
+.registration-prompt {
+  text-align: center; 
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; /* Tamaño de fuente adecuado */
+  color: #ffffff; /* Color del texto principal */
+  margin-top: 20px; /* Espacio superior */
+
+  p {
+    margin: 0;
+  }
+
+  /* Estilo para el enlace de registro   (hazlo aqui)*/
+  .register-link {
+    color: #28a745; /* Color del enlace (verde del logo) */
+    font-weight: bold; /* Hace el enlace más llamativo */
+    text-decoration: none; /* Elimina la subrayado  */
+    border-bottom: 2px solid transparent; /* Línea decorativa */
+
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+
+    &:hover {
+      color: #218838; /* Cambia a un verde más cuando se selecciona */
+      border-bottom: 2px solid #218838; /* Añade una línea si se toca */
+    }
+  }
 }
