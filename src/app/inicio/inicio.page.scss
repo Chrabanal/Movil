@@ -1,0 +1,7 @@
+
+/* colores de fondo */
+ion-content { 
+    --background: linear-gradient(135deg, #1e3c72, #2a5298, #76c7c0, #ff9966, #ff5e62); /* rama de colores*/
+    background-size: 200% 200%; /* Aumenta el tamaño del fondo para dar más profundidad */
+    height: 100%; /* segura que abarque todo el contenedor */
+  }
