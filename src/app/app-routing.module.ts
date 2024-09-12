@@ -15,11 +15,13 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
+    path: 'gps',
+    loadChildren: () => import('./gps/gps.module').then( m => m.GpsPageModule)
+  },
+  {
     path: '',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
-
-
 ];
 
 @NgModule({
