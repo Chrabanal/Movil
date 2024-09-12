@@ -26,12 +26,12 @@
   
   c-carousel-caption {
     position: relative;
-    width: 100%; /* Asegura que el texto ocupe todo el ancho del carrusel */
-    text-align: center; /* Centra el texto horizontalmente */
-    padding: 1rem; /* Agrega un padding alrededor del texto */
-    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho total */
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el texto */
-    margin-top: 1rem; /* Agrega espacio entre la imagen y el texto */
+    width: 100%;
+    text-align: center; 
+    padding: 1rem; 
+    box-sizing: border-box; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    margin-top: 1rem; 
   }
   
   .title-green {
