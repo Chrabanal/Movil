@@ -25,15 +25,15 @@ import { NgFor } from '@angular/common';
     ngOnInit(): void {
       this.slides[0] = {
         id: 0,
-        src: './assets/img/inicio1.png',
-        title: 'First slide',
-        subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+        src: './assets/img/vege.gif',
+        title: '',
+        subtitle: '¿Vas al super y no sabes que comprar?'
       };
       this.slides[1] = {
         id: 1,
-        src: './assets/img/inicio2.png',
-        title: 'Second slide',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        src: './assets/img/check.jpg',
+        title: '',
+        subtitle: 'Organiza, planifica y ordena tus compras de tu Hogar con solo un click'
       };
     }
   }

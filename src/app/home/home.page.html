@@ -1,55 +1,94 @@
 <ion-header>
-  <div class="welcome-message">Bienvenido a la comunidad Check!</div>
+    <div class="welcome-message">Bienvenido a la comunidad Check!</div>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-text-center">
-  <!-- Tu contenido existente aquí -->
-  <img src="assets/img/Black___White_Letter_MD_Logo_Instagram_Post-removebg-preview (1).png" alt="Logo"
-    class="logo-img">
 
-  <div class="icons-container">
-    <div class="icon-container">
-      <img src="assets/img/compartir.png" alt="Compartir" class="icon">
-    </div>
-    <div class="icon-container">
-      <img src="assets/img/configuracion.png" alt="Configuración" class="icon">
-    </div>
-    <div class="icon-container">
-      <img src="assets/img/gastos.png" alt="Gastos" class="icon">
-    </div>
-    <div class="icon-container">
-      <img src="assets/img/notificacion.png" alt="Notificación" class="icon">
-    </div>
-  </div>
-
-
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <img src="assets/img/Black___White_Letter_MD_Logo_Instagram_Post-removebg-preview (1).png" alt="Logo" class="logo-img">
+      <br>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
     <ion-list>
-      <ion-item *ngFor="let barcode of barcodes">
-        <ion-label position="stacked">{{ barcode.format }}</ion-label>
-        <ion-input type="text" [value]="barcode.rawValue"></ion-input>
+      <ion-item routerLink="/my-stock">
+        <ion-label>My Stock</ion-label>
+      </ion-item>
+      <ion-item routerLink="/gastos">
+        <ion-label>Gastos</ion-label>
+      </ion-item>
+      <ion-item routerLink="/supermercado-cercano">
+        <ion-label>Supermercado Cercano</ion-label>
+      </ion-item>
+      <ion-item routerLink="/alertas">
+        <ion-label>Alertas</ion-label>
+      </ion-item>
+      <ion-item routerLink="/contactanos">
+        <ion-label>Contáctanos</ion-label>
+      </ion-item>
+      <ion-item routerLink="/mesa-de-ayuda">
+        <ion-label>Mesa de Ayuda</ion-label>
+      </ion-item>
+      <ion-item routerLink="/escanea-tu-boleta">
+        <ion-label>Escanea tu Boleta</ion-label>
       </ion-item>
     </ion-list>
-    <ion-fab slot="fixed" vertical="bottom" horizontal="end" *ngIf="!isWeb">
-      <ion-fab-button (click)="scan()" [disabled]="!isSupported">
-        <ion-icon name="scan"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</div>
 
 
-    <ng-container *ngIf="isWeb" >
-      <ngx-scanner-qrcode [config]="config" (onDecode)="scanResult($event)" #action="scanner"></ngx-scanner-qrcode>
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ 
+<!-- Side Menu --> 
+<br>
+  <!-- Main Content Area -->
+ 
+  <!-- Barcode List -->
+  <ion-list>
+    <ion-item *ngFor="let barcode of barcodes">
+      <ion-label position="stacked">{{ barcode.format }}</ion-label>
+      <ion-input type="text" [value]="barcode.rawValue"></ion-input>
+    </ion-item>
+  </ion-list>
 
-      <!-- <span>{{ action.data.value | json }}</span> value -->
-      <!-- <span>{{ action.data | async | json }}</span>async -->
+  <!-- Floating Action Button for Scanning (only for mobile) -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" *ngIf="!isWeb">
+    <ion-fab-button (click)="scan()" [disabled]="!isSupported">
+      <ion-icon name="scan"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-      <!-- Loading -->
-      <p *ngIf="action.isLoading">⌛ Loading...</p>
+ <!-- QR Scanner for Web -->
+<ng-container *ngIf="isWeb">
+  <div class="scanner-container">
+    <ngx-scanner-qrcode [config]="config" (onDecode)="scanResult($event)" #action="scanner"></ngx-scanner-qrcode>
 
-      <!-- start -->
-      <ion-fab-button (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? 'Stop' : 'Start'}}</ion-fab-button>
-
-    </ng-container>
+    <!-- Loading Message -->
+    <p *ngIf="action.isLoading">⌛ Loading...</p>
+  </div>
   
-</ion-content>
+    <!-- Start/Stop Button -->
+  <div class="button-scan">
+    <ion-fab-button 
+    (click)="action.isStart ? action.stop() : action.start()"
+    class="custom-fab-button" >
+    {{ action.isStart ? 'Stop' : 'Start' }}
+    </ion-fab-button>
+  </div>
+</ng-container>
+
 <ion-footer>
+  RACCOON DEVS
 </ion-footer>
