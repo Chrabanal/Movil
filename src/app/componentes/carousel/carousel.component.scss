@@ -1,0 +1,48 @@
+:host { 
+    display: block;
+    background-color: #000000; 
+    color: #ffffff; 
+    height: 100vh;
+    overflow: hidden; 
+  }
+  
+  c-carousel {
+    height: 100%; 
+  }
+  
+  c-carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Apila */
+    height: 100%;
+  }
+  
+  c-carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  c-carousel-caption {
+    position: relative;
+    width: 100%; /* Asegura que el texto ocupe todo el ancho del carrusel */
+    text-align: center; /* Centra el texto horizontalmente */
+    padding: 1rem; /* Agrega un padding alrededor del texto */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho total */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el texto */
+    margin-top: 1rem; /* Agrega espacio entre la imagen y el texto */
+  }
+  
+  .title-green {
+    color: #00ff00;
+    font-size: 3rem; 
+    font-weight: bold; 
+  }
+  
+  .subtitle {
+    font-size: 1.5rem; 
+    font-weight: normal; 
+    margin-top: 0.5rem;
+  }
+  
