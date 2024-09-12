@@ -84,6 +84,7 @@ ion-fab {
   .scanner-container {
     width: 90%; 
     height: 300px; 
+    
     }
 
   .welcome-message {
@@ -102,4 +103,20 @@ ion-fab {
   .scanner-container {
     width: 60%; 
   }
+}
+
+
+.custom-fab-button {
+  --background: #28a745;  // Color de fondo verde
+  --color: #333;          // Texto oscuro
+  --padding: 10px;        // Espaciado interno
+  --border-radius: 50%;  // Bordes redondeados
+  font-weight: bold;     // Texto en negrita
+}
+
+.button-scan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajusta esto si necesitas un contenedor con altura específica */
 }

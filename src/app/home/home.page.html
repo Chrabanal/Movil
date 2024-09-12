@@ -1,8 +1,8 @@
 
 
 <ion-content [fullscreen]="true" class="ion-text-center">
-  <!-- Logo -->
-  <img src="assets/img/Black___White_Letter_MD_Logo_Instagram_Post-removebg-preview (1).png" alt="Logo" class="logo-img">
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ 
 <!-- Side Menu --> 
 <ion-menu contentId="main-content">
   <ion-header>
@@ -37,7 +37,7 @@
     </ion-list>
   </ion-content>
 </ion-menu>
-
+<br>
 
   <!-- Main Content Area -->
   <div class="ion-page" id="main-content">
@@ -77,12 +77,14 @@
 
     <!-- Loading Message -->
     <p *ngIf="action.isLoading">⌛ Loading...</p>
-
-    <!-- Start/Stop Button -->
-    <ion-fab-button (click)="action.isStart ? action.stop() : action.start()">
-      {{ action.isStart ? 'Stop' : 'Start' }}
-    </ion-fab-button>
   </div>
+    <!-- Start/Stop Button -->
+    <ion-fab-button class="button-scan"
+    (click)="action.isStart ? action.stop() : action.start()"
+    class="custom-fab-button" >
+    {{ action.isStart ? 'Stop' : 'Start' }}
+    </ion-fab-button>
+
 </ng-container>
 
 <ion-footer>
