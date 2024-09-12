@@ -78,12 +78,15 @@
     <!-- Loading Message -->
     <p *ngIf="action.isLoading">⌛ Loading...</p>
   </div>
+  
     <!-- Start/Stop Button -->
-    <ion-fab-button class="button-scan"
+  <div class="button-scan">  
+    <ion-fab-button 
     (click)="action.isStart ? action.stop() : action.start()"
     class="custom-fab-button" >
     {{ action.isStart ? 'Stop' : 'Start' }}
     </ion-fab-button>
+  </div> 
 
 </ng-container>
 

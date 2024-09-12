@@ -57,6 +57,8 @@ ion-content {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
 }
 
 /* Estilo del componente ngx-scanner-qrcode */
@@ -118,5 +120,6 @@ ion-fab {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ajusta esto si necesitas un contenedor con altura específica */
+  margin-top: 0%;
+  padding-top: 0%;
 }
