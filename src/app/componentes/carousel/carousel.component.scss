@@ -2,7 +2,7 @@
   display: block;
   background-color: #000000; 
   color: #ffffff; 
-  height: 100vh;
+  height: 80%;
   overflow: hidden; 
 }
 
@@ -14,7 +14,7 @@ c-carousel-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Apila */
+  flex-direction: column; 
   height: 100%;
 }
 
@@ -25,16 +25,14 @@ c-carousel-item img {
   object-fit: cover;
 }
 
-
-
-/* Para  (web) */
+// Para (web)
 @media (min-width: 768px) {
   c-carousel-item img {
-   
+    // Ajustes específicos para pantallas grandes
   }
 }
 
-/* Para pantallas pequeñas (móviles) */
+// Para pantallas pequeñas (móviles)
 @media (max-width: 767px) {
   c-carousel-item img {
     width: 100%;
@@ -47,10 +45,14 @@ c-carousel-caption {
   position: relative;
   width: 100%;
   text-align: center; 
-  padding: 1rem; 
+  padding: 0.5rem; 
   box-sizing: border-box; 
   background-color: rgba(0, 0, 0, 0.7); 
-  margin-top: 1rem; 
+  margin-top: 0.5rem; 
+  
+.button {
+    margin: 0.25rem; 
+  }
 }
 
 .title-green {
