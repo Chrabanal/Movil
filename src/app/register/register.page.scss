@@ -1,62 +1,84 @@
 /* colores de fondo */
 ion-content { 
-    --background: linear-gradient(135deg, #1e3c72, #2a5298, #76c7c0, #ff9966, #ff5e62); /* rama de colores */
+    --background: linear-gradient(135deg, #1e3c72, #2a5298, #76c7c0, #ff9966, #ff5e62); /* rama de colores*/
     background-size: 200% 200%; /* Aumenta el tamaño del fondo para dar más profundidad */
-    height: 100%; /* Asegura que abarque todo el contenedor */
-}
-
-
-
-
+    height: 100%; /* segura que abarque todo el contenedor */
+  }
   
-/* animación logo palpitaciones de corazón */
-.logo-img {
+  /* animacion logo palpitaciones de corazon*/
+  .logo-img {
     display: block;
     margin: 40px auto;
     width: 250px;
     height: auto;
     animation: pulse-animation 2s infinite; /* Aplica la animación */
-}
-
-@keyframes pulse-animation {
+  }
+  
+  @keyframes pulse-animation {
     0% {
-        transform: scale(1); /* Tamaño normal */
+      transform: scale(1); /* Tamaño normal */
     }
     50% {
-        transform: scale(1.1); /* Aumenta el tamaño */
+      transform: scale(1.1); /* Aumenta el tamaño */
     }
     100% {
-        transform: scale(1); /* Tamaño normal */
+      transform: scale(1); /* Tamaño normal */
     }
-}
-
-/* contenedor del formulario */
-.form-container {
-    --background: rgba(66, 66, 68, 0.8); /* Nivel de transparencia (80% opaco) */
+  }
+  
+  
+  
+  /*container para transparencia */
+  .form-container {
+    --background: rgba(66, 66, 68, 0.8); /* nivel de transparencia(80% opaco) */
     --border-radius: 16px; /* Bordes curvados */
-    margin: 10px; /* Margen del contenedor por los lados */
+    margin: 10px; /* margen del container por los lados*/
     border-radius: 16px; /* Curvatura de los bordes */
-}
-
-/* contenedores de correo y contraseña */
-ion-item {
+  }
+  
+  
+  /* dividir los los container de correo y contraseña separar y curvarlos*/
+  ion-item {
     --border-radius: 8px; /* Bordes curvados para los contenedores */
-    margin-bottom: 16px; /* Espacio inferior entre campos */
-}
-
-
-
-
-
-/* Estilo del botón registrarse y volver */
-ion-button {
+      margin-bottom: 16px; /* Espacio inferior entre campos */
+  }
+  
+  
+  /* Estilo del botón de inicio sesión */
+  ion-button {
     display: block;
-    width: 100%; /* El botón ocupa todo el ancho del contenedor */
-    --background: #28a745; /* Color del botón */
-    --border-radius: 50px; /* Bordes muy curvados para hacer el botón ovalado */
+    width: 100%; /* el boton ocupe todo el hancho del contenedor*/
+    --background: #28a745; /* color boton */
+    --border-radius: 12px; /* Bordes curvados  boton */
     font-weight: bold; /* Engrosa el texto del botón */
-    font-size: 16px; /* Ajusta el tamaño del texto */
-    --padding: 12px 24px; /* Ajusta el tamaño del botón para un buen aspecto */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: agrega sombra para un efecto de elevación */
-    text-align: center; /* Asegura que el texto esté centrado */
-}
+    font-size: 16px; /* Ajusta el tamaño*/  
+  }
+  
+  /* Estilo para el mensaje de registro  ( Aun no te has registrado) */
+  .registration-prompt {
+    text-align: center; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px; /* Tamaño de fuente adecuado */
+    color: #ffffff; /* Color del texto principal */
+    margin-top: 20px; /* Espacio superior */
+  
+    p {
+      margin: 0;
+    }
+  
+    /* Estilo para el enlace de registro   (hazlo aqui)*/
+    .register-link {
+      color: #28a745; /* Color del enlace (verde del logo) */
+      font-weight: bold; /* Hace el enlace más llamativo */
+      text-decoration: none; /* Elimina la subrayado  */
+      border-bottom: 2px solid transparent; /* Línea decorativa */
+  
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+  
+      &:hover {
+        color: #218838; /* Cambia a un verde más cuando se selecciona */
+        border-bottom: 2px solid #218838; /* Añade una línea si se toca */
+      }
+    }
+  }
+  

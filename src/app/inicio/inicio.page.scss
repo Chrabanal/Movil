@@ -1,11 +1,26 @@
-/* Colores de fondo */
 ion-content { 
-    --background: black;  //linear-gradient(45deg, #ff5e62, #ff9966, #76c7c0, #2a5298, #1e3c72); 
-    background-size: 200% 200%; /* Tamaño de fondo extendido para efecto de profundidad */
-    height: 100%; /* ancho */
-    position: relative; /* Para posicionar  */
+    --background: black; 
+    background-size: 200% 200%; 
+    height: 100%; 
+    position: relative; 
   }
 
 ion-card {
     background-color: aliceblue;
+}
+.buttons-container {
+  display: flex; 
+  justify-content: space-between; 
+  gap: 10px; 
+}
+
+ion-button.custom-button {
+  display: block;
+  flex: 1; 
+  --background: #28a745;
+  --border-radius: 12px; 
+  font-weight: bold; 
+  font-size: 16px; 
+  color: #333; 
+  text-align: center; 
 }
