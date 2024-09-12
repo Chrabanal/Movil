@@ -4,7 +4,8 @@
 
 <ion-content [fullscreen]="true" class="ion-text-center">
   <!-- Tu contenido existente aquí -->
-  <img src="assets/img/Black___White_Letter_MD_Logo_Instagram_Post-removebg-preview (1).png" alt="Logo" class="logo-img">
+  <img src="assets/img/Black___White_Letter_MD_Logo_Instagram_Post-removebg-preview (1).png" alt="Logo"
+    class="logo-img">
 
   <div class="icons-container">
     <div class="icon-container">
@@ -21,10 +22,34 @@
     </div>
   </div>
 
-  <div class="scan-image-container">
-    <img src="assets/img/scanea.png" alt="Escaneo" class="scan-image">
-  </div>
-</ion-content>
 
+    <ion-list>
+      <ion-item *ngFor="let barcode of barcodes">
+        <ion-label position="stacked">{{ barcode.format }}</ion-label>
+        <ion-input type="text" [value]="barcode.rawValue"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end" *ngIf="!isWeb">
+      <ion-fab-button (click)="scan()" [disabled]="!isSupported">
+        <ion-icon name="scan"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+
+    <ng-container *ngIf="isWeb" >
+      <ngx-scanner-qrcode [config]="config" (onDecode)="scanResult($event)" #action="scanner"></ngx-scanner-qrcode>
+
+      <!-- <span>{{ action.data.value | json }}</span> value -->
+      <!-- <span>{{ action.data | async | json }}</span>async -->
+
+      <!-- Loading -->
+      <p *ngIf="action.isLoading">⌛ Loading...</p>
+
+      <!-- start -->
+      <ion-fab-button (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? 'Stop' : 'Start'}}</ion-fab-button>
+
+    </ng-container>
+  
+</ion-content>
 <ion-footer>
 </ion-footer>
