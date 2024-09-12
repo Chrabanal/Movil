@@ -1,37 +1,88 @@
-<ion-header>
-  <div class="welcome-message">Bienvenido a la comunidad Check!</div>
-</ion-header>
+
 
 <ion-content [fullscreen]="true" class="ion-text-center">
-  <!-- Tu contenido existente aquí -->
-  <img src="assets/img/Black___White_Letter_MD_Logo_Instagram_Post-removebg-preview (1).png" alt="Logo"
-    class="logo-img">
+  <!-- Logo -->
+  <img src="assets/img/Black___White_Letter_MD_Logo_Instagram_Post-removebg-preview (1).png" alt="Logo" class="logo-img">
 
+  <!-- Side Menu -->
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item routerLink="/my-stock">
+          <ion-label>My Stock</ion-label>
+        </ion-item>
+        <ion-item routerLink="/gastos">
+          <ion-label>Gastos</ion-label>
+        </ion-item>
+        <ion-item routerLink="/supermercado-cercano">
+          <ion-label>Supermercado Cercano</ion-label>
+        </ion-item>
+        <ion-item routerLink="/alertas">
+          <ion-label>Alertas</ion-label>
+        </ion-item>
+        <ion-item routerLink="/contactanos">
+          <ion-label>Contáctanos</ion-label>
+        </ion-item>
+        <ion-item routerLink="/mesa-de-ayuda">
+          <ion-label>Mesa de Ayuda</ion-label>
+        </ion-item>
+        <ion-item routerLink="/escanea-tu-boleta">
+          <ion-label>Escanea tu Boleta</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
 
-    <ion-list>
-      <ion-item *ngFor="let barcode of barcodes">
-        <ion-label position="stacked">{{ barcode.format }}</ion-label>
-        <ion-input type="text" [value]="barcode.rawValue"></ion-input>
-      </ion-item>
-    </ion-list>
-    <ion-fab slot="fixed" vertical="bottom" horizontal="end" *ngIf="!isWeb">
-      <ion-fab-button (click)="scan()" [disabled]="!isSupported">
-        <ion-icon name="scan"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+  <!-- Main Content Area -->
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div class="welcome-message">Bienvenido a la comunidad Check!</div>
+      
+    </ion-content>
+  </div>
 
+  <!-- Barcode List -->
+  <ion-list>
+    <ion-item *ngFor="let barcode of barcodes">
+      <ion-label position="stacked">{{ barcode.format }}</ion-label>
+      <ion-input type="text" [value]="barcode.rawValue"></ion-input>
+    </ion-item>
+  </ion-list>
 
-    <ng-container *ngIf="isWeb">
-      <ngx-scanner-qrcode [config]="config" (onDecode)="scanResult($event)" #action="scanner"></ngx-scanner-qrcode>
-    
-      <!-- Loading -->
-      <p *ngIf="action.isLoading">⌛ Loading...</p>
-    
-      <!-- Start/Stop Button -->
-      <ion-fab-button (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? 'Stop' : 'Start'}}</ion-fab-button>
-    </ng-container>
-    
-  
-</ion-content>
+  <!-- Floating Action Button for Scanning (only for mobile) -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" *ngIf="!isWeb">
+    <ion-fab-button (click)="scan()" [disabled]="!isSupported">
+      <ion-icon name="scan"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+ <!-- QR Scanner for Web -->
+<ng-container *ngIf="isWeb">
+  <div class="scanner-container">
+    <ngx-scanner-qrcode [config]="config" (onDecode)="scanResult($event)" #action="scanner"></ngx-scanner-qrcode>
+
+    <!-- Loading Message -->
+    <p *ngIf="action.isLoading">⌛ Loading...</p>
+
+    <!-- Start/Stop Button -->
+    <ion-fab-button (click)="action.isStart ? action.stop() : action.start()">
+      {{ action.isStart ? 'Stop' : 'Start' }}
+    </ion-fab-button>
+  </div>
+</ng-container>
+
 <ion-footer>
 </ion-footer>

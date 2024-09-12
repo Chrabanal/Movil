@@ -8,12 +8,14 @@ ion-content {
 
 /* Logo */
 .logo-img {
-  max-width: 80%; /* Tamaño  */
+  max-width: 80%;
   height: auto; /* Mantiene posicion */
-  display: block; /* Asegura que el logo no tenga márgenes adicionalesy lo mantiene a la izquierda */
+  display: block; 
 }
 
-
+ion-menu {
+  background-color: #f0f0f0 !important; /* Forzar el color de fondo gris */
+}
 
 /* Estilos para el mensaje de bienvenida */
 .welcome-message {
@@ -27,7 +29,7 @@ ion-content {
   padding: 10px;
   font-size: 1.2em;
   font-weight: bold;
-  animation: slideInPauseOut 6s ease-out forwards; /* Duración total extendida */
+  animation: slideInPauseOut 10s ease-out forwards; /* Duración total extendida */
 }
 
 /* Animación de deslizamiento, pausa y desaparición */
@@ -36,7 +38,7 @@ ion-content {
     transform: translateX(100%); 
     opacity: 0;
   }
-  5% {
+  80% {
     transform: translateX(0); 
     opacity: 1;
   }
@@ -50,4 +52,21 @@ ion-content {
     transform: translateX(-100%); 
     opacity: 0;
   }
+}
+
+
+/* tamaño scanner */
+.scanner-container {
+  position: relative;
+  width: 50%; 
+  height: 400px; 
+  margin: 0 auto; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ngx-scanner-qrcode {
+  width: 80%; 
+  height: 80%; 
 }
