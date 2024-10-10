@@ -2,32 +2,31 @@
 
 <ion-menu contentId="main-content">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
       <img src="assets/img/Black___White_Letter_MD_Logo_Instagram_Post-removebg-preview (1).png" alt="Logo" class="logo-img">
       <br>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding">
+  <ion-content class="ion-padding" >
     <ion-list>
-      <ion-item routerLink="/my-stock">
+      <ion-item routerLink="/my-stock" color="dark">
+        <ion-icon name="cart-outline"></ion-icon>
         <ion-label>My Stock</ion-label>
       </ion-item>
-      <ion-item routerLink="/gastos">
+      <ion-item routerLink="/gastos" color="dark">
+        <ion-icon name="archive-outline"></ion-icon>
         <ion-label>Gastos</ion-label>
       </ion-item>
-      <ion-item routerLink="/supermercado-cercano">
+      <ion-item routerLink="/supermercado-cercano" color="dark">
+        <ion-icon name="navigate-outline"></ion-icon>
         <ion-label>Supermercado Cercano</ion-label>
       </ion-item>
-      <ion-item routerLink="/alertas">
-        <ion-label>Alertas</ion-label>
-      </ion-item>
-      <ion-item routerLink="/contactanos">
-        <ion-label>Contáctanos</ion-label>
-      </ion-item>
-      <ion-item routerLink="/mesa-de-ayuda">
+      <ion-item routerLink="/mesa-de-ayuda" color="dark">
+        <ion-icon name="information-circle-outline"></ion-icon>
         <ion-label>Mesa de Ayuda</ion-label>
       </ion-item>
-      <ion-item routerLink="/escanea-tu-boleta">
+      <ion-item routerLink="/escanea-tu-boleta" color="dark">
+        <ion-icon name="scan-outline"></ion-icon>
         <ion-label>Escanea tu Boleta</ion-label>
       </ion-item>
     </ion-list>
@@ -35,19 +34,60 @@
 </ion-menu>
 <div class="ion-page" id="main-content">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>Menu</ion-title>
+      <ion-title >Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 </div>
- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ <br><br><br>
  <ion-header>
   <div class="welcome-message">Bienvenido a la comunidad Check!</div>
+
+  <br>
+  <br>
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Mis Compras</ion-card-title>
+      <ion-card-subtitle>Octubre</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      $ 1,000.00
+    </ion-card-content>
+  </ion-card>
 </ion-header>
  
+<ion-searchbar color="light" placeholder="Light"></ion-searchbar>
+
+<ion-grid [fixed]="true">
+  <ion-row>
+    <ion-col size="6" size-md="4" size-lg="2"><ion-card  color="light">
+      <ion-card-header>
+        <ion-card-title>Card Title</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content> Card Content </ion-card-content>
+    </ion-card>
+  </ion-col>
+   
+    <ion-col size="6" size-md="4" size-lg="2">
+      <ion-card  color="light">
+        <ion-card-header>
+          <ion-card-title>Card Title</ion-card-title>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content> Card Content </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>
+
 <!-- Side Menu --> 
 <br>
   <!-- Main Content Area -->
@@ -85,3 +125,4 @@
     </ion-fab-button>
   </div>
 </ng-container>
+</ion-content>
