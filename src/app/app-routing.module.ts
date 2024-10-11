@@ -17,7 +17,24 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },  {
+    path: 'mystock',
+    loadChildren: () => import('./mystock/mystock.module').then( m => m.MystockPageModule)
   },
+  {
+    path: 'gastos',
+    loadChildren: () => import('./gastos/gastos.module').then( m => m.GastosPageModule)
+  },
+  {
+    path: 'supermercados',
+    loadChildren: () => import('./supermercados/supermercados.module').then( m => m.SupermercadosPageModule)
+  },
+  {
+    path: 'ayuda',
+    loadChildren: () => import('./ayuda/ayuda.module').then( m => m.AyudaPageModule)
+  },
+
+
   
 ];
 

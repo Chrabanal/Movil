@@ -10,12 +10,28 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+
+
+
+
+
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(),AppRoutingModule, NgxScannerQrcodeModule, AngularFireModule.initializeApp(environment.FIREBASE_CONFIG),
+  imports: [BrowserModule, IonicModule.forRoot()
+  ,AppRoutingModule,
+
+
+
+  NgxScannerQrcodeModule,
+  AngularFireModule.initializeApp(environment.FIREBASE_CONFIG),
   AngularFireAuthModule, BrowserAnimationsModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+
   bootstrap: [AppComponent],
+  
+  
+
 })
 export class AppModule {}
 
