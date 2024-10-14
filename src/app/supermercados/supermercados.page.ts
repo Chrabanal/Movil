@@ -27,9 +27,10 @@ export class SupermercadosPage implements OnInit {
       console.log('Error al obtener la ubicación', error);
     });
   }
-
+  
   // Método para abrir Google Maps con la búsqueda de supermercados cercanos
-  openGoogleMaps() {
+  
+  openGoogleMapSupermercados() {
     if (this.currentLocation) {
       const url = `https://www.google.com/maps/search/supermercados/@${this.currentLocation.lat},${this.currentLocation.lng},15z`;
       window.open(url, '_blank');
@@ -37,4 +38,46 @@ export class SupermercadosPage implements OnInit {
       console.log('Ubicación no disponible');
     }
   }
+  
+  openGoogleMapsSantaIsabel() {
+    if (this.currentLocation) {
+      const url = `https://www.google.com/maps/search/santa+isabel/@${this.currentLocation.lat},${this.currentLocation.lng},15z`;
+      window.open(url, '_blank');
+    } else {
+      console.log('Ubicación no disponible');
+    }
+  }
+  openGoogleMapsLider() {
+    if (this.currentLocation) {
+      const url = `https://www.google.com/maps/search/lider/@${this.currentLocation.lat},${this.currentLocation.lng},15z`;
+      window.open(url, '_blank');
+    } else {
+      console.log('Ubicación no disponible');
+    }
+  }
+  openGoogleMapsJumbo() {
+    if (this.currentLocation) {
+      const url = `https://www.google.com/maps/search/jumbo/@${this.currentLocation.lat},${this.currentLocation.lng},15z`;
+      window.open(url, '_blank');
+    } else {
+      console.log('Ubicación no disponible');
+    }
+  }
+  
+  openGoogleMapsUnimarc() {
+    if (this.currentLocation) {
+      const url = `https://www.google.com/maps/search/unimarc/@${this.currentLocation.lat},${this.currentLocation.lng},15z`;
+      window.open(url, '_blank');
+    } else {
+      console.log('Ubicación no disponible');
+    }
+  }
+
+  
+
+
+
+
+
 }
+
